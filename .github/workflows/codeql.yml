@@ -43,9 +43,9 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.3.1
       
-    - name: Retrieve and build all available solutions
+    - name: Build solution
       run: |
-          .\Build-AllSamples.ps1 -Verbose -ThrottleLimit 1
+          .\build\build_verbose.cmd
       env:
         WDS_Configuration: Debug
         WDS_Platform: x64
