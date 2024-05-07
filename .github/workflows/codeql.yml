@@ -38,18 +38,25 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
+        packs: microsoft/windows-drivers
         build-mode: ${{ matrix.build-mode }}
+        queries: security-extended,security-and-quality
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v2
+
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v3
+
+#codeql pack download microsoft/windows-drivers@1.1.0
       
-    - name: Build solution
-      run: |
-          .\build\build_verbose.cmd
-      env:
-        WDS_Configuration: Debug
-        WDS_Platform: x64
-        WDS_WipeOutputs: ${{ true }}
+    #- name: Build solution
+    #  run: |
+     #     .\build\build_verbose.cmd
+    #  env:
+    #    WDS_Configuration: Debug
+    #    WDS_Platform: x64
+   #     WDS_WipeOutputs: ${{ true }}
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
