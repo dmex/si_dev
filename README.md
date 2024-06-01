@@ -6,7 +6,7 @@
 
 <img align="left" src="https://github.com/winsiderss/systeminformer/raw/master/SystemInformer/resources/systeminformer-128x128.png" width="128" height="128" style="max-width: 100%;padding-right: 20px;">
 
-## System Informer
+## TEST
 
 A free, powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware. Brought to you by Winsider Seminars & Solutions, Inc.
 
